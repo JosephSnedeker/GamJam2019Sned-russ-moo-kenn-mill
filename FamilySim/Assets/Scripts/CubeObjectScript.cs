@@ -15,10 +15,9 @@ public class CubeObjectScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch) > 0.9f)
         {
 
-            Debug.Log("Backspace");
             cube.transform.position = Vector3.zero;
             cube.velocity = Vector3.zero;
 

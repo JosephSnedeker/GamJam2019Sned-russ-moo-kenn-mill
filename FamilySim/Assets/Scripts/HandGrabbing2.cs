@@ -69,7 +69,7 @@ public class HandGrabbing2 : MonoBehaviour
         {
 
             //if we we release grab button, release current object
-            if (Input.GetAxis(InputName) < 0.5f && _currentObject != null)
+            if (Input.GetAxis(InputName) < 0.9f && _currentObject != null)
             {
                 //set grab object to non-kinematic (enable physics)
                 Rigidbody _objectRGB = _currentObject.GetComponent<Rigidbody>();
