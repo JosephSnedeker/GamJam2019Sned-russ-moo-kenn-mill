@@ -6300,17 +6300,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: OBJ
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 520da81b63734774b92d4806f794fa77, type: 3}
+      propertyPath: m_TagString
+      value: OBJ
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 520da81b63734774b92d4806f794fa77, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7158
+      value: -2.69
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 520da81b63734774b92d4806f794fa77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5234
+      value: 3.42
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 520da81b63734774b92d4806f794fa77, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.311
+      value: -1.85
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 520da81b63734774b92d4806f794fa77, type: 3}
       propertyPath: m_LocalRotation.x
@@ -7752,7 +7756,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749558674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.54, y: -20.7, z: -0.98}
+  m_LocalPosition: {x: 13.290001, y: -20.7, z: -1.8299999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 544583408}
@@ -7830,7 +7834,7 @@ GameObject:
   - component: {fileID: 1790171583}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

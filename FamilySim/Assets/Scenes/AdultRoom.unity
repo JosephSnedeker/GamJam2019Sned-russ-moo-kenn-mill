@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 181451919}
   m_Layer: 0
   m_Name: Random Clutter
-  m_TagString: Untagged
+  m_TagString: Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -674,7 +674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010907262934, guid: 91e1f9e8a986ed344be385215d3145b3, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4000010907262934, guid: 91e1f9e8a986ed344be385215d3145b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -702,6 +702,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 204733112}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &204733115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204733114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 961e8e0df43107847839e6b76dc8c650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveCount: 1
+  nextScene: Chapel
 --- !u!64 &204733118
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -716,31 +730,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: e3ff11dbbe2447f4390e781a3033d688, type: 3}
---- !u!1 &208662614 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 39bf1ce04a7c7384aa9b2e359dbc23dc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1282653177}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &208662615 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 39bf1ce04a7c7384aa9b2e359dbc23dc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1282653177}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &208662616
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208662614}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 4.71
-  m_Center: {x: -0.000061038045, y: -0.000000018648999, z: 1.0475492}
 --- !u!1001 &240123777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1138,18 +1127,7 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.63
       objectReference: {fileID: 0}
-    - target: {fileID: 64406355898021620, guid: d3425841044ac5a4fabdf7d7efc79b71,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 64406355898021620, guid: d3425841044ac5a4fabdf7d7efc79b71,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 64406355898021620, guid: d3425841044ac5a4fabdf7d7efc79b71, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3425841044ac5a4fabdf7d7efc79b71, type: 3}
 --- !u!4 &474377889 stripped
 Transform:
@@ -1755,25 +1733,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034357746}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1055506068 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1267746800574586, guid: d3425841044ac5a4fabdf7d7efc79b71,
-    type: 3}
-  m_PrefabInstance: {fileID: 474377888}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1055506069
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055506068}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.8074006, y: 0.3312781, z: 2.0848007}
-  m_Center: {x: 9.142572e-21, y: 0.33537698, z: -0.000003784422}
 --- !u!1001 &1061693076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2169,7 +2128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39bf1ce04a7c7384aa9b2e359dbc23dc, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39bf1ce04a7c7384aa9b2e359dbc23dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2195,13 +2154,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.020000005
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: 39bf1ce04a7c7384aa9b2e359dbc23dc, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 849c668ccdf8d8e4dad8a3d0e9381571, type: 2}
-    m_RemovedComponents:
-    - {fileID: 9500000, guid: 39bf1ce04a7c7384aa9b2e359dbc23dc, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39bf1ce04a7c7384aa9b2e359dbc23dc, type: 3}
+--- !u!4 &1282653178 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 39bf1ce04a7c7384aa9b2e359dbc23dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1282653177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1282853250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3242,10 +3202,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1979763027}
-  - component: {fileID: 1979763028}
   m_Layer: 0
   m_Name: Objective
-  m_TagString: Untagged
+  m_TagString: OBJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3261,24 +3220,11 @@ Transform:
   m_LocalPosition: {x: 16.151, y: 1.8479996, z: 47.092}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1282653178}
   - {fileID: 204733113}
-  - {fileID: 208662615}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1979763028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979763026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 961e8e0df43107847839e6b76dc8c650, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextScene: Chapel
 --- !u!1 &2095865813 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1578233314806844, guid: 78d0443a3c14b6d4db9103d21b155498,
