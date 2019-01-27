@@ -57,7 +57,16 @@ public class HandGrabbing2 : MonoBehaviour
                     }
 
                     //set grab object to kinematic (disable physics)
-                    _currentObject.GetComponent<Rigidbody>().isKinematic = true;
+                    if(_currentObject.tag != "OBJ")
+                    {
+                        _currentObject.GetComponent<Rigidbody>().isKinematic = true;
+                    }
+                    else if (_currentObject.tag == "OBJ")
+                    {
+                        Destroy(_currentObject);
+                        GameManager.Instance.objCount += 1;
+                    }
+                    
 
 
                 }
