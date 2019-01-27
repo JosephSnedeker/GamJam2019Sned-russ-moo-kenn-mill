@@ -5,6 +5,7 @@ using UnityEngine;
 public class TeleportingRight : MonoBehaviour
 {
     public Transform Player;
+    public float tpHeight = 0f;
     private RaycastHit hit;
     private LineRenderer laserLine;
     private bool isLaser = false;
@@ -27,7 +28,7 @@ public class TeleportingRight : MonoBehaviour
 
                 //Limit distyance here. with if statement
                 Debug.Log("Player teleported");
-                Player.transform.position = new Vector3(hit.point.x, 0, hit.point.z);
+                Player.transform.position = new Vector3(hit.point.x, tpHeight, hit.point.z);
                 laserLine.enabled = false;
 
             }
