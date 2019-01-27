@@ -12,6 +12,7 @@ public class HandGrabbing2 : MonoBehaviour
     public XRNode NodeType;
     public float GrabDistance = 0.1f;
     public string GrabTag = "Grab";
+    public string ObjectiveTag = "OBJ";
     public float ThrowMultiplier = 1.5f;
     public Transform cube;
 
@@ -57,9 +58,19 @@ public class HandGrabbing2 : MonoBehaviour
                     }
 
                     //set grab object to kinematic (disable physics)
+                    
+                    
                     _currentObject.GetComponent<Rigidbody>().isKinematic = true;
+                    
+                  
+                    
 
 
+                }
+                else if (Input.GetAxis(InputName) >= 0.01f && colliders[0].transform.CompareTag(ObjectiveTag))
+                {
+                    Destroy(_currentObject);
+                    GameManager.Instance.objCount += 1;
                 }
             }
 
