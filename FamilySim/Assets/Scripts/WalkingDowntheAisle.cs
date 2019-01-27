@@ -6,10 +6,13 @@ public class WalkingDowntheAisle : MonoBehaviour
 {
     private float timeLeft = 5;
     private bool waited = false;
+    public TeleportingLeft teleLeft;
+    public TeleportingRight teleRight;
     // Start is called before the first frame update
     void Start()
     {
-
+        teleRight = GetComponent<TeleportingRight>();
+        teleLeft = GetComponent<TeleportingLeft>();
     }
 
     // Update is called once per frame
@@ -30,7 +33,8 @@ public class WalkingDowntheAisle : MonoBehaviour
             {
 
                 transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z);
-
+                teleLeft.enabled = true;
+                teleRight.enabled = true;
             }
 
         }
