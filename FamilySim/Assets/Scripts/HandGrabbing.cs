@@ -1,43 +1,52 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR; //needs to be UnityEngine.VR in version before 2017.2
-using UnityEngine.SceneManagement;
+using UnityEngine.XR; //needs to be UnityEngine.VR in Versions before 2017.2
 
-
-//hand grabbing script for tutorial #2
-public class HandGrabbing2 : MonoBehaviour
+public class HandGrabbing : MonoBehaviour
 {
 
     public string InputName;
+    public HandGrabbing OtherHandReference;
     public XRNode NodeType;
-    public HandGrabbing2 OtherHandReference;
+    public Vector3 ObjectGrabOffset;
     public float GrabDistance = 0.1f;
     public string GrabTag = "Grab";
-    public string ObjectiveTag = "OBJ";
-    public float ThrowMultiplier = 1.5f;
-    public Transform cube;
+    public float ThrowMultiplier=1.5f;
 
-    public Transform _currentObject;
+    public Transform CurrentGrabObject
+    {
+        get { return _currentGrabObject; }
+        set { _currentGrabObject = value; }
+    }
+
     private Vector3 _lastFramePosition;
+    private Transform _currentGrabObject;
+    private bool _isGrabbing;
 
     // Use this for initialization
     void Start()
     {
-        _currentObject = null;
         _lastFramePosition = transform.position;
+
+        XRDevice.SetTrackingSpaceType(TrackingSpaceType.RoomScale);
+
+        _currentGrabObject = null;
+
+        _isGrabbing = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
         //update hand position and rotation
         transform.localPosition = InputTracking.GetLocalPosition(NodeType);
         transform.localRotation = InputTracking.GetLocalRotation(NodeType);
 
+
         //if we don't have an active object in hand, look if there is one in proximity
-        if (transform.childCount == 1)
+        if (_currentGrabObject == null)
         {
             //check for colliders in proximity
             Collider[] colliders = Physics.OverlapSphere(transform.position, GrabDistance);
@@ -46,51 +55,52 @@ public class HandGrabbing2 : MonoBehaviour
                 //if there are colliders, take the first one if we press the grab button and it has the tag for grabbing
                 if (Input.GetAxis(InputName) >= 0.01f && colliders[0].transform.CompareTag(GrabTag))
                 {
-                    //set current object to the object we have picked up
-                    _currentObject = colliders[0].transform;
+                    //if we are already grabbing, return
+                    if(_isGrabbing)
+                    {
+                        return;
+                    }
+                    _isGrabbing = true;
 
-                    //parent it to hand
+                    //set current object to the object we have picked up (set it as child)
                     colliders[0].transform.SetParent(transform);
 
                     //if there is no rigidbody to the grabbed object attached, add one
-                    if (_currentObject.GetComponent<Rigidbody>() == null)
+                    if(colliders[0].GetComponent<Rigidbody>() == null)
                     {
-                        _currentObject.gameObject.AddComponent<Rigidbody>();
+                        colliders[0].gameObject.AddComponent<Rigidbody>();
                     }
 
                     //set grab object to kinematic (disable physics)
-                    _currentObject.GetComponent<Rigidbody>().isKinematic = true;
+                    colliders[0].GetComponent<Rigidbody>().isKinematic = true;
+
 
                     //save a reference to grab object
-                    _currentObject = colliders[0].transform;
+                    _currentGrabObject = colliders[0].transform;
 
                     //does other hand currently grab object? then release it!
-                    if (OtherHandReference._currentObject != null)
+                    if (OtherHandReference.CurrentGrabObject != null)
                     {
-                        OtherHandReference._currentObject = null;
+                        OtherHandReference.CurrentGrabObject = null;
                     }
 
-                }
-                else if (Input.GetAxis(InputName) >= 0.01f && colliders[0].transform.CompareTag(ObjectiveTag))
-                {
-                    Destroy(_currentObject);
-                    GameManager.Instance.objCount += 1;
+
+
                 }
             }
-
         }
         else
-        //we have object in hand
+        //we have object in hand, update its position with the current hand position (+defined offset from it)
         {
 
             //if we we release grab button, release current object
-            if (Input.GetAxis(InputName) < 0.9f && _currentObject != null)
+            if (Input.GetAxis(InputName) < 0.01f)
             {
-                //set grab object to non-kinematic (enable physics)
-                Rigidbody _objectRGB = _currentObject.GetComponent<Rigidbody>();
-                _objectRGB.isKinematic = false;
 
-                //do continuous collision detection so dropped object doesn't fall through ground
+
+                //set grab object to non-kinematic (enable physics)
+                Rigidbody _objectRGB = _currentGrabObject.GetComponent<Rigidbody>();
+                _objectRGB.isKinematic = false;
                 _objectRGB.collisionDetectionMode = CollisionDetectionMode.Continuous;
 
                 //calculate the hand's current velocity
@@ -99,17 +109,23 @@ public class HandGrabbing2 : MonoBehaviour
                 //set the grabbed object's velocity to the current velocity of the hand
                 _objectRGB.velocity = CurrentVelocity * ThrowMultiplier;
 
-                //unparent the object
-                _currentObject.SetParent(null);
+                //release the the object (unparent it)
+                _currentGrabObject.SetParent(null);
 
-                //release the reference
-                _currentObject = null;
+                //release reference to object
+                _currentGrabObject = null;
             }
 
         }
 
-        //save the current position for calculation of velocity in next frame
-        _lastFramePosition = transform.position;
+        //release grab ?
+        if (Input.GetAxis(InputName) < 0.01f && _isGrabbing)
+        {
+            _isGrabbing = false;
+        }
+
+            //save the current position for calculation of velocity in next frame
+            _lastFramePosition = transform.position;
 
 
     }

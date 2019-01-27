@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2671330289117920535}
   - component: {fileID: 2671330289117920532}
   - component: {fileID: 2671330289117920531}
+  - component: {fileID: 8577376173420328933}
+  - component: {fileID: 8957483780465594090}
   m_Layer: 0
   m_Name: Lefthand
   m_TagString: Untagged
@@ -60,11 +62,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputName: TriggerLeft
   NodeType: 4
+  OtherHandReference: {fileID: 2671330289554581477}
   GrabDistance: 0.1
   GrabTag: Grab
+  ObjectiveTag: OBJ
   ThrowMultiplier: 4
   cube: {fileID: 0}
   _currentObject: {fileID: 0}
+--- !u!114 &8577376173420328933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2671330289117920534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06b2665d14569046a53711f301e1b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8957483780465594090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2671330289117920534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b12b003bb5c5af44828d94adc314b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 2671330289999773298}
 --- !u!1 &2671330289554581464
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,6 +105,8 @@ GameObject:
   - component: {fileID: 2671330289554581465}
   - component: {fileID: 2671330289554581478}
   - component: {fileID: 2671330289554581477}
+  - component: {fileID: 4553883527418924996}
+  - component: {fileID: 1708915388541557853}
   m_Layer: 0
   m_Name: Righthand
   m_TagString: Untagged
@@ -125,11 +156,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputName: TriggerRight
   NodeType: 5
+  OtherHandReference: {fileID: 2671330289117920531}
   GrabDistance: 0.1
   GrabTag: Grab
+  ObjectiveTag: OBJ
   ThrowMultiplier: 4
   cube: {fileID: 0}
   _currentObject: {fileID: 0}
+--- !u!114 &4553883527418924996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2671330289554581464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06b2665d14569046a53711f301e1b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1708915388541557853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2671330289554581464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2248491cc1f9ba449b9a2834bbc9a7b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 2671330289999773298}
 --- !u!1 &2671330289999773301
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +198,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2671330289999773298}
   - component: {fileID: 2671330289999773296}
-  - component: {fileID: 2671330289999773299}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -218,18 +275,6 @@ MonoBehaviour:
   resetTrackerOnLoad: 0
   AllowRecenter: 1
   _reorientHMDOnControllerRecenter: 1
---- !u!114 &2671330289999773299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2671330289999773301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acdb7b3d88ef62646990a7b9b6339fb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2671330290500953800
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +412,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -97.386
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 67bbac61d7bfb2c40ae67e3d22986bee, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 57dbf2241398a2a4e8f18420cf1d3769, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67bbac61d7bfb2c40ae67e3d22986bee, type: 3}
 --- !u!4 &2671330289338612199 stripped
@@ -438,6 +487,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 67bbac61d7bfb2c40ae67e3d22986bee, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 57dbf2241398a2a4e8f18420cf1d3769, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67bbac61d7bfb2c40ae67e3d22986bee, type: 3}
 --- !u!4 &2671330289765433659 stripped
