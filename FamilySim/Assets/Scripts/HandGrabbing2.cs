@@ -16,7 +16,8 @@ public class HandGrabbing2 : MonoBehaviour
     public string ObjectiveTag = "OBJ";
     public float ThrowMultiplier = 1.5f;
     public Transform cube;
-
+    [SerializeField]
+    GameObject[] OBJS = new GameObject[2];
     public Transform _currentObject;
     private Vector3 _lastFramePosition;
 
@@ -73,8 +74,17 @@ public class HandGrabbing2 : MonoBehaviour
                 }
                 else if (Input.GetAxis(InputName) >= 0.01f && colliders[0].transform.CompareTag(ObjectiveTag))
                 {
-                    Destroy(_currentObject);
+                    _currentObject = colliders[0].transform;
+
+                    Debug.Log(GameManager.Instance.objCount);
+                    Destroy(_currentObject.gameObject);
+                    
+                    if (OtherHandReference._currentObject != null)
+                    {
+                        OtherHandReference._currentObject = null;
+                    }
                     GameManager.Instance.objCount += 1;
+
                 }
             }
 

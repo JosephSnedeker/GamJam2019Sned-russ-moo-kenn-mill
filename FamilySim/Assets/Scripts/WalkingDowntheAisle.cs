@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class WalkingDowntheAisle : MonoBehaviour
 {
+    private TeleportingLeft teleportLeft;
+    private TeleportingRight teleportRight;
     private float timeLeft = 5;
     private bool waited = false;
-    public TeleportingLeft teleLeft;
-    public TeleportingRight teleRight;
     // Start is called before the first frame update
     void Start()
     {
-        teleRight = GetComponent<TeleportingRight>();
-        teleLeft = GetComponent<TeleportingLeft>();
+
+        teleportRight = transform.GetChild(1).GetComponent<TeleportingRight>();
+        teleportLeft = transform.GetChild(2).GetComponent<TeleportingLeft>();
+        //teleportRight = transform.Find("RightHand").GetComponent<TeleportingRight>();
+
     }
 
     // Update is called once per frame
@@ -26,16 +29,17 @@ public class WalkingDowntheAisle : MonoBehaviour
 
         }
 
-        if (waited)
+        if (transform.position.x > -33 && waited)
         {
 
-            if(transform.position.x > -31)
-            {
-
-                transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z);
-                teleLeft.enabled = true;
-                teleRight.enabled = true;
-            }
+            transform.position = new Vector3(transform.position.x - 0.04f, transform.position.y, transform.position.z);
+           
+        }
+        if (transform.position.x <= -33 && waited)
+        {
+        
+            teleportLeft.enabled = true;
+            teleportRight.enabled = true;
 
         }
 
