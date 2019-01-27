@@ -91,7 +91,7 @@ public class HandGrabbing2 : MonoBehaviour
                 _objectRGB.isKinematic = false;
 
                 //do continuous collision detection so dropped object doesn't fall through ground
-                _objectRGB.collisionDetectionMode = CollisionDetectionMode.Continuous;
+                //_objectRGB.collisionDetectionMode = CollisionDetectionMode.Continuous;
 
                 //calculate the hand's current velocity
                 Vector3 CurrentVelocity = (transform.position - _lastFramePosition) / Time.deltaTime;
