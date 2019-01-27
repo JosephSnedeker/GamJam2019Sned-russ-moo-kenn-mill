@@ -8,7 +8,8 @@ public class GameManager
     static GameManager instance;
 
     public int objCount { get; set; }
-
+    public TeleportingLeft teleLeft { get; set; }
+    public TeleportingRight teleRight { get; set; }
 
 
 

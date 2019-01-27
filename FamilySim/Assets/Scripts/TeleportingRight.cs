@@ -9,7 +9,6 @@ public class TeleportingRight : MonoBehaviour
     private RaycastHit hit;
     private LineRenderer laserLine;
     private bool isLaser = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +18,7 @@ public class TeleportingRight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        laserLine.material = new Material(Shader.Find("Mobile/Particles/Additive"));
+        laserLine.material = new Material(Shader.Find("Sprites/Default"));
         OVRInput.Update();
         if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).y < 0.81f && laserLine.enabled)
         {

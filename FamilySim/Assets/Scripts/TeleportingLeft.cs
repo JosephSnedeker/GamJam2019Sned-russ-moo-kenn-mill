@@ -19,7 +19,7 @@ public class TeleportingLeft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        laserLine.material = new Material(Shader.Find("Mobile/Particles/Additive"));
+        laserLine.material = new Material(Shader.Find("Sprites/Default"));
         OVRInput.Update();
         if (OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).y < 0.81f && laserLine.enabled)
         {
