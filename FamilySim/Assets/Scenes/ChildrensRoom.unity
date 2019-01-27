@@ -512,6 +512,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TruckB
       objectReference: {fileID: 0}
+    - target: {fileID: 1455880255266326, guid: 6143fa93811fddf42b2ef98f8a1f9fcc, type: 3}
+      propertyPath: m_TagString
+      value: OBJ
+      objectReference: {fileID: 0}
     - target: {fileID: 4479210210420766, guid: 6143fa93811fddf42b2ef98f8a1f9fcc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.7489996

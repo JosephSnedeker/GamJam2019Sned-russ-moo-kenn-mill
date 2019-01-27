@@ -6327,6 +6327,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: OBJ
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 520da81b63734774b92d4806f794fa77, type: 3}
+      propertyPath: m_TagString
+      value: OBJ
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 520da81b63734774b92d4806f794fa77, type: 3}
+      propertyPath: m_TagString
+      value: OBJ
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 520da81b63734774b92d4806f794fa77, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.7158
