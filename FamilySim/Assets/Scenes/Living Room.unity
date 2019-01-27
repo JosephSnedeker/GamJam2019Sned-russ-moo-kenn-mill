@@ -812,7 +812,13 @@ PrefabInstance:
       propertyPath: tpHeight
       value: 4.313
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1564078783408411957, guid: 773934c6fffa1664c81ddfafebc3e531,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1564078783408411957, guid: 773934c6fffa1664c81ddfafebc3e531, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 773934c6fffa1664c81ddfafebc3e531, type: 3}
 --- !u!1 &419627901
 GameObject:
