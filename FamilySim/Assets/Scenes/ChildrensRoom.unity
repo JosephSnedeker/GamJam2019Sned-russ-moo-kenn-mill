@@ -253,7 +253,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b5198f8af2f2fb74d81edc8ca9d255ce, type: 2}
+  - {fileID: 2100000, guid: 944feb076639a4d39b750e3cb5d7dfab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -511,6 +511,10 @@ PrefabInstance:
     - target: {fileID: 1455880255266326, guid: 6143fa93811fddf42b2ef98f8a1f9fcc, type: 3}
       propertyPath: m_Name
       value: TruckB
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455880255266326, guid: 6143fa93811fddf42b2ef98f8a1f9fcc, type: 3}
+      propertyPath: m_TagString
+      value: OBJ
       objectReference: {fileID: 0}
     - target: {fileID: 4479210210420766, guid: 6143fa93811fddf42b2ef98f8a1f9fcc, type: 3}
       propertyPath: m_LocalPosition.x
