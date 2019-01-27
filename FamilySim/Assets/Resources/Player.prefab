@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2671330289117920535}
   - component: {fileID: 2671330289117920532}
   - component: {fileID: 2671330289117920531}
-  - component: {fileID: 8577376173420328933}
   - component: {fileID: 8957483780465594090}
   - component: {fileID: 5319602655917194686}
   m_Layer: 0
@@ -70,18 +69,6 @@ MonoBehaviour:
   ThrowMultiplier: 4
   cube: {fileID: 0}
   _currentObject: {fileID: 0}
---- !u!114 &8577376173420328933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2671330289117920534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d06b2665d14569046a53711f301e1b03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8957483780465594090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 2671330289999773298}
+  tpHeight: 0
 --- !u!120 &5319602655917194686
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -201,7 +189,6 @@ GameObject:
   - component: {fileID: 2671330289554581465}
   - component: {fileID: 2671330289554581478}
   - component: {fileID: 2671330289554581477}
-  - component: {fileID: 4553883527418924996}
   - component: {fileID: 1708915388541557853}
   - component: {fileID: 3901003574503929687}
   m_Layer: 0
@@ -260,18 +247,6 @@ MonoBehaviour:
   ThrowMultiplier: 4
   cube: {fileID: 0}
   _currentObject: {fileID: 0}
---- !u!114 &4553883527418924996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2671330289554581464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d06b2665d14569046a53711f301e1b03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1708915388541557853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 2671330289999773298}
+  tpHeight: 0
 --- !u!120 &3901003574503929687
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -604,15 +580,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -97.386
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 67bbac61d7bfb2c40ae67e3d22986bee, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 57dbf2241398a2a4e8f18420cf1d3769, type: 2}
-    - target: {fileID: 9500000, guid: 67bbac61d7bfb2c40ae67e3d22986bee, type: 3}
+    - target: {fileID: 13700000, guid: 67bbac61d7bfb2c40ae67e3d22986bee, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 67bbac61d7bfb2c40ae67e3d22986bee, type: 3}
+    - target: {fileID: 9500000, guid: 67bbac61d7bfb2c40ae67e3d22986bee, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 67bbac61d7bfb2c40ae67e3d22986bee, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -691,7 +667,7 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: 67bbac61d7bfb2c40ae67e3d22986bee, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 57dbf2241398a2a4e8f18420cf1d3769, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 67bbac61d7bfb2c40ae67e3d22986bee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 67bbac61d7bfb2c40ae67e3d22986bee, type: 3}
