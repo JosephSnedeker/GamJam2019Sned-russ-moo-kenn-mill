@@ -8,7 +8,7 @@ public class ObjectivObject : MonoBehaviour
 
     private int kids;
     [SerializeField]
-    private string nextScene;
+    private int nextScene;
     
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,14 @@ public class ObjectivObject : MonoBehaviour
 
         if (GameManager.Instance.objCount == kids)
         {
-            SceneManager.LoadScene(nextScene);
+            int buildIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            if (buildIndex >= 5)
+            {
+
+                buildIndex = 0;
+
+            }
+            SceneManager.LoadScene(buildIndex);
             GameManager.Instance.objCount = 0;
         }
 

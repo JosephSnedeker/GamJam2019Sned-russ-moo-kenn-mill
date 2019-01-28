@@ -2711,7 +2711,7 @@ PrefabInstance:
     - target: {fileID: 2671330289999773298, guid: 773934c6fffa1664c81ddfafebc3e531,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.85
+      value: 4.48
       objectReference: {fileID: 0}
     - target: {fileID: 2671330289999773298, guid: 773934c6fffa1664c81ddfafebc3e531,
         type: 3}
@@ -2766,7 +2766,7 @@ PrefabInstance:
     - target: {fileID: 8957483780465594090, guid: 773934c6fffa1664c81ddfafebc3e531,
         type: 3}
       propertyPath: tpHeight
-      value: 6.85
+      value: 4.48
       objectReference: {fileID: 0}
     - target: {fileID: 1708915388541557853, guid: 773934c6fffa1664c81ddfafebc3e531,
         type: 3}
@@ -2776,7 +2776,7 @@ PrefabInstance:
     - target: {fileID: 1708915388541557853, guid: 773934c6fffa1664c81ddfafebc3e531,
         type: 3}
       propertyPath: tpHeight
-      value: 6.85
+      value: 4.48
       objectReference: {fileID: 0}
     - target: {fileID: 1564078783408411957, guid: 773934c6fffa1664c81ddfafebc3e531,
         type: 3}
@@ -3193,7 +3193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961e8e0df43107847839e6b76dc8c650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: AdultRoom
+  nextScene: 0
 --- !u!1 &544618846
 GameObject:
   m_ObjectHideFlags: 0
@@ -6310,6 +6310,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: OBJ
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 520da81b63734774b92d4806f794fa77, type: 3}
+      propertyPath: m_TagString
+      value: OBJ
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 520da81b63734774b92d4806f794fa77, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.16
@@ -6410,10 +6414,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d741f598aa33b254998530042a37519d, type: 2}
-    - target: {fileID: 100002, guid: 520da81b63734774b92d4806f794fa77, type: 3}
-      propertyPath: m_TagString
-      value: OBJ
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520da81b63734774b92d4806f794fa77, type: 3}
 --- !u!1 &1409133103
@@ -7859,7 +7859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961e8e0df43107847839e6b76dc8c650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Kitchen
+  nextScene: 4
 --- !u!4 &1764753380
 Transform:
   m_ObjectHideFlags: 0
