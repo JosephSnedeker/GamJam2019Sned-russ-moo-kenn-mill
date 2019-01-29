@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TeleportingLeft : MonoBehaviour
 {
-    public Transform Player;
-    public float tpHeight = 0f;
     private RaycastHit hit;
     private LineRenderer laserLine;
     private bool isLaser = false;
@@ -25,10 +23,9 @@ public class TeleportingLeft : MonoBehaviour
         {
             if(hit.collider.tag == "Teleportable")
             {
-
-                //Limit distyance here. with if statement
+                
                 Debug.Log("Player teleported");
-                Player.transform.position = new Vector3(hit.point.x, tpHeight, hit.point.z);
+                transform.parent.transform.position = new Vector3(hit.point.x, transform.parent.transform.position.y, hit.point.z);
                 laserLine.enabled = false;
 
             }
@@ -51,13 +48,13 @@ public class TeleportingLeft : MonoBehaviour
                 laserLine.SetPositions(new Vector3[] { transform.position, hit.point });
                 if (hit.collider.tag == "Teleportable")
                 {
-                    laserLine.startColor = new Color(0, 255, 0);
-                    laserLine.endColor = new Color(0, 70, 0);
+                    laserLine.startColor = new Color(0, 120, 0, 50);
+                    laserLine.endColor = new Color(0, 120, 0, 0);
                 }
                 else
                 {
-                    laserLine.startColor = new Color(255, 0, 0);
-                    laserLine.endColor = new Color(70, 0, 0);
+                    laserLine.startColor = new Color(120, 0, 0, 50);
+                    laserLine.endColor = new Color(120, 0, 0, 0);
                 }
             }
             else

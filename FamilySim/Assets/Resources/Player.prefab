@@ -68,6 +68,9 @@ MonoBehaviour:
   ObjectiveTag: OBJ
   ThrowMultiplier: 4
   cube: {fileID: 0}
+  OBJS:
+  - {fileID: 0}
+  - {fileID: 0}
   _currentObject: {fileID: 0}
 --- !u!114 &8957483780465594090
 MonoBehaviour:
@@ -131,7 +134,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.055555556
+        value: 0.00825331
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -246,6 +249,9 @@ MonoBehaviour:
   ObjectiveTag: OBJ
   ThrowMultiplier: 4
   cube: {fileID: 0}
+  OBJS:
+  - {fileID: 0}
+  - {fileID: 0}
   _currentObject: {fileID: 0}
 --- !u!114 &1708915388541557853
 MonoBehaviour:
@@ -309,7 +315,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.055555556
+        value: 0.00825331
         inSlope: 0
         outSlope: 0
         tangentMode: 0

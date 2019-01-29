@@ -13,7 +13,17 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x * 4, 0));
-        transform.Rotate(new Vector3(0, OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).x * 4, 0));
+        if(OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).y < 0.4)
+        {
+
+            transform.Rotate(new Vector3(0, OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x * 3, 0));
+
+        }
+        if(OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).y < 0.4)
+        {
+
+            transform.Rotate(new Vector3(0, OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).x * 3, 0));
+
+        }
     }
 }
